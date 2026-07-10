@@ -71,10 +71,19 @@ public class SecurityConfig {
                         // Public endpoints
                         .requestMatchers("/api/auth/**").permitAll()
 
+                        .requestMatchers("/error").permitAll()
+
+                        // Departments explicit base path + sub-paths
+                        .requestMatchers("/api/v1/departments").permitAll()
+                        .requestMatchers("/api/v1/departments/**").permitAll()
+
+                        // Employees explicit base path + sub-paths
+                        .requestMatchers("/api/v1/employees").permitAll()
+                        .requestMatchers("/api/v1/employees/**").permitAll()
+
                         // All other endpoints require authentication
                         .anyRequest().authenticated()
                 )
-
                 // JWT Filter
                 .addFilterBefore(
                         jwtAuthenticationFilter,
