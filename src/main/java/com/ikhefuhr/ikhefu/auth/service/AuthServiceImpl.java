@@ -1,12 +1,12 @@
-package com.ikhefuhr.ikhefu.service.impl;
+package com.ikhefuhr.ikhefu.auth.service.impl;
 
-import com.ikhefuhr.ikhefu.dto.request.LoginRequest;
-import com.ikhefuhr.ikhefu.dto.response.LoginResponse;
+import com.ikhefuhr.ikhefu.auth.controller.dto.request.LoginRequest;
+import com.ikhefuhr.ikhefu.auth.controller.dto.response.LoginResponse;
 import com.ikhefuhr.ikhefu.entity.User;
 import com.ikhefuhr.ikhefu.repository.UserRepository;
 import com.ikhefuhr.ikhefu.security.jwt.JwtService;
 import com.ikhefuhr.ikhefu.security.service.CustomUserDetailsService;
-import com.ikhefuhr.ikhefu.service.AuthService;
+import com.ikhefuhr.ikhefu.auth.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
