@@ -1,8 +1,9 @@
-package com.ikhefuhr.ikhefu.controller;
+package com.ikhefuhr.ikhefu.auth.controller;
 
-import com.ikhefuhr.ikhefu.dto.request.LoginRequest;
-import com.ikhefuhr.ikhefu.dto.response.LoginResponse;
-import com.ikhefuhr.ikhefu.service.AuthService;
+import com.ikhefuhr.ikhefu.auth.service.AuthService;
+import com.ikhefuhr.ikhefu.auth.dto.request.LoginRequest;
+import com.ikhefuhr.ikhefu.auth.dto.response.LoginResponse;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

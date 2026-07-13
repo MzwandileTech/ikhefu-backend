@@ -1,7 +1,8 @@
-package com.ikhefuhr.ikhefu.auth.service.impl;
+package com.ikhefuhr.ikhefu.auth.service;
 
-import com.ikhefuhr.ikhefu.auth.controller.dto.request.LoginRequest;
-import com.ikhefuhr.ikhefu.auth.controller.dto.response.LoginResponse;
+import com.ikhefuhr.ikhefu.auth.dto.request.LoginRequest;
+import com.ikhefuhr.ikhefu.auth.dto.response.LoginResponse;
+import org.springframework.stereotype.Service;
 import com.ikhefuhr.ikhefu.entity.User;
 import com.ikhefuhr.ikhefu.repository.UserRepository;
 import com.ikhefuhr.ikhefu.security.jwt.JwtService;
