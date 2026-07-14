@@ -70,7 +70,6 @@ public class SecurityConfig {
 
                         // Public endpoints
                         .requestMatchers("/api/auth/**").permitAll()
-
                         .requestMatchers("/error").permitAll()
 
                         // Departments explicit base path + sub-paths
@@ -81,9 +80,22 @@ public class SecurityConfig {
                         .requestMatchers("/api/v1/employees").permitAll()
                         .requestMatchers("/api/v1/employees/**").permitAll()
 
+                        // --- EMPLOYEE LEAVE ENDPOINTS (PLACE ALL OF THESE ABOVE THE ADMIN WILDCARD!) ---
+                        .requestMatchers(
+                                "/api/leaves/apply",
+                                "/api/leaves/my-history",
+                                "/api/leaves/my-balances", // Added here!
+                                "/api/leaves/*/cancel"
+                        ).authenticated()
+
+                        // --- ADMIN LEAVE ENDPOINTS ---
+                        .requestMatchers("/api/leaves", "/api/leaves/**").hasRole("ADMIN")
+
                         // All other endpoints require authentication
                         .anyRequest().authenticated()
                 )
+
+
                 // JWT Filter
                 .addFilterBefore(
                         jwtAuthenticationFilter,
